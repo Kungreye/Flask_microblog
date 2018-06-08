@@ -6,6 +6,7 @@ name = "pypi.doubanio.com"
 [packages]
 ipython = "*"
 flask-migrate = "*"
+flask-login = "*"
 
 [dev-packages]
 
