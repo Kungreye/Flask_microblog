@@ -69,7 +69,7 @@ def login():
 
 @app.route('/logout')
 def logout():
-    logout_user()
+    HAHAlogout_user()
     return redirect(url_for('index'))   # since 'index' is set with @login_required, so further redirect to 'login' as per login.login_view='login' (in __init__.py).
 
 
