@@ -10,8 +10,11 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     MAIL_SERVER = os.environ.get('MAIL_SERVER')
-    MAIL_PORT = int(os.environ.get('MAIL_PORT') or 25)      # smtp default port:25; encrypted smtp port: 587 (or 465) (smtp.sina.com)
+    MAIL_PORT = int(os.environ.get('MAIL_PORT') or 25)
     MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS') is not None
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME') # optional, by default not used.
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD') # optional, by default not used.
-    ADMINS = ['kungreye@sina.com']    # list of email addrs willing to receive error reports.
+    ADMINS = ['kungreye@163.com']    # list of email addrs willing to receive error reports.
+    # smtp.gmail.com: default 25, TLS 587
+    
+    POSTS_PER_PAGE = 3
