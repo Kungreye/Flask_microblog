@@ -1,11 +1,12 @@
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
-import oss
+import os
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
+from flask_mail import Mail
 from config import Config
 
 
@@ -17,6 +18,7 @@ migrate = Migrate(app, db)
 
 login = LoginManager(app)
 login.login_view = 'login'  # force user to login by redirect to view func 'login'.
+mail = Mail(app)
 
 
 if not app.debug:                   # only for debug mode: off
