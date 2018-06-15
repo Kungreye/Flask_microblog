@@ -14,8 +14,7 @@ class Config(object):
     MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS') is not None
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME') # optional, by default not used.
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD') # optional, by default not used.
-    ADMINS = ['kungreye@163.com', 'kungreye@gmail.com']    # list of email addrs willing to receive error reports.
+    ADMINS = ['kungreye@gmail.com']    # list of email addrs willing to receive error reports.
     # smtp.gmail.com: default 25, TLS 587
-    # smtp.163.com: default 25, SSL 465/994
     
     POSTS_PER_PAGE = 3
