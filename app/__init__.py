@@ -7,18 +7,18 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_mail import Mail
+from flask_bootstrap import Bootstrap
 from config import Config
 
 
 app = Flask(__name__)               # __name__: predefined var, set to module name in which it it used.
 app.config.from_object(Config)
-
 db = SQLAlchemy(app)                # engine created.
 migrate = Migrate(app, db)
-
 login = LoginManager(app)
 login.login_view = 'login'  # force user to login by redirect to view func 'login'.
 mail = Mail(app)
+bootstrap = Bootstrap(app)
 
 
 if not app.debug:                   # only for debug mode: off
@@ -49,6 +49,7 @@ if not app.debug:                   # only for debug mode: off
 
     app.logger.setLevel(logging.INFO)
     app.logger.info('Microblog startup')
+
 
 
 from app import routes, models, errors      # bottom imports
