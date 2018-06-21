@@ -1,4 +1,79 @@
-2018-06-14 17:56:52,393 ERROR: Exception on /logout [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
+2018-06-21 11:14:46,874 ERROR: Exception on /favicon.ico [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1791, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1774, in raise_routing_exception
+    raise request.routing_exception
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/ctx.py", line 336, in match_request
+    self.url_adapter.match(return_rule=True)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/werkzeug/routing.py", line 1581, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1713, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1644, in handle_http_exception
+    return handler(e)
+  File "/home/duan/Flask_microblog/app/errors.py", line 7, in not_found_error
+    return render_template('404.html'), 404
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/duan/Flask_microblog/app/templates/404.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/duan/Flask_microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 6, in block "html"
+    {%- block head %}
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 7, in block "head"
+    <title>{% block title %}{{title|default}}{% endblock title %}</title>
+  File "/home/duan/Flask_microblog/app/templates/base.html", line 5, in block "title"
+    {% if title %}{{ title }} - Microblog{% else %}{{ _('Welcome to Microblog') }}{% endif %}
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/ext.py", line 134, in _gettext_alias
+    return __context.call(__context.resolve('gettext'), *args, **kwargs)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/ext.py", line 140, in gettext
+    rv = __context.call(func, __string)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_babel/__init__.py", line 116, in <lambda>
+    lambda x: get_translations().ugettext(x),
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_babel/__init__.py", line 227, in get_translations
+    [get_locale()],
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_babel/__init__.py", line 257, in get_locale
+    rv = babel.locale_selector_func()
+  File "/home/duan/Flask_microblog/app/__init__.py", line 62, in get_locale
+    return request.accept_languages.best.match(app.config['LANGUAGES']) # compare list of langs requested by client against the supported langs of app, return best choice.
+AttributeError: 'str' object has no attribute 'match'
+2018-06-21 11:19:57,844 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
+2018-06-21 11:38:13,807 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
+2018-06-21 12:05:41,107 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
+2018-06-21 12:10:46,280 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
+2018-06-21 12:27:32,991 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
+2018-06-21 12:29:59,354 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
+2018-06-21 13:25:33,261 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
+2018-06-21 14:49:06,716 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
+2018-06-21 16:20:43,414 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
+2018-06-21 16:20:50,997 ERROR: Exception on / [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -8,99 +83,16 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
     raise value
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/duan/Flask_microblog/app/routes.py", line 72, in logout
-    logout_user()
-NameError: name 'hhalogout_user' is not defined
-2018-06-14 17:57:06,368 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:49]
-2018-06-14 22:24:55,220 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:49]
-2018-06-14 22:25:22,293 ERROR: Exception on /logout [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/duan/Flask_microblog/app/routes.py", line 72, in logout
-    HAHAlogout_user()
-NameError: name 'HAHAlogout_user' is not defined
-2018-06-14 22:25:24,236 ERROR: Exception on /logout [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/duan/Flask_microblog/app/routes.py", line 72, in logout
-    HAHAlogout_user()
-NameError: name 'HAHAlogout_user' is not defined
-2018-06-14 22:25:31,813 ERROR: Exception on /logout [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/duan/Flask_microblog/app/routes.py", line 72, in logout
-    HAHAlogout_user()
-NameError: name 'HAHAlogout_user' is not defined
-2018-06-14 22:28:03,831 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:49]
-2018-06-14 22:28:10,555 ERROR: Exception on /logout [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/duan/Flask_microblog/app/routes.py", line 72, in logout
-    HAHAlogout_user()
-NameError: name 'HAHAlogout_user' is not defined
-2018-06-14 22:30:20,430 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:49]
-2018-06-14 22:30:36,613 ERROR: Exception on /logout [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/duan/Flask_microblog/app/routes.py", line 72, in logout
-    HAHAlogout_user()
-NameError: name 'HAHAlogout_user' is not defined
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1811, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2087, in preprocess_request
+    rv = func()
+  File "/home/duan/Flask_microblog/app/routes.py", line 18, in before_request
+    g.locale = str(get_locale())    # get_locale() returns a locale obj; use str() to get lang code.
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_babel/__init__.py", line 261, in get_locale
+    locale = Locale.parse(rv)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/babel/core.py", line 268, in parse
+    parts = parse_locale(identifier, sep=sep)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/babel/core.py", line 1094, in parse_locale
+    raise ValueError('expected only letters, got %r' % lang)
+ValueError: expected only letters, got 'zh-cn'

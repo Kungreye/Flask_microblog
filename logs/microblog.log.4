@@ -1,4 +1,4 @@
-2018-06-14 14:52:05,187 ERROR: Exception on /explore [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
+2018-06-14 22:34:19,356 ERROR: Exception on /logout [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,30 +12,10 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/duan/Flask_microblog/app/routes.py", line 52, in explore
-    next_url=next_url, prev_url=prev_url)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
-    context, ctx.app)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
-    rv = template.render(context)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/home/duan/Flask_microblog/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/duan/Flask_microblog/app/templates/base.html", line 31, in top-level template code
-    {% block content %}{% endblock %}
-  File "/home/duan/Flask_microblog/app/templates/index.html", line 18, in block "content"
-    {% for post in posts %}
-TypeError: 'Pagination' object is not iterable
-2018-06-14 14:52:07,364 ERROR: Exception on /explore [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
+  File "/home/duan/Flask_microblog/app/routes.py", line 72, in logout
+    HAHAlogout_user()
+NameError: name 'HAHAlogout_user' is not defined
+2018-06-14 22:34:22,627 ERROR: Exception on /logout [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -49,31 +29,11 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/duan/Flask_microblog/app/routes.py", line 52, in explore
-    next_url=next_url, prev_url=prev_url)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
-    context, ctx.app)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
-    rv = template.render(context)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/home/duan/Flask_microblog/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/duan/Flask_microblog/app/templates/base.html", line 31, in top-level template code
-    {% block content %}{% endblock %}
-  File "/home/duan/Flask_microblog/app/templates/index.html", line 18, in block "content"
-    {% for post in posts %}
-TypeError: 'Pagination' object is not iterable
-2018-06-14 14:57:44,844 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:49]
-2018-06-14 14:58:12,915 ERROR: Exception on /explore [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
+  File "/home/duan/Flask_microblog/app/routes.py", line 72, in logout
+    HAHAlogout_user()
+NameError: name 'HAHAlogout_user' is not defined
+2018-06-14 22:37:10,466 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:49]
+2018-06-14 22:37:42,372 ERROR: Exception on /logout [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -87,12 +47,27 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/duan/Flask_microblog/app/routes.py", line 46, in explore
-    prev_url = ulr_for('explore', page=posts.prev_num) if posts.has_prev else None
-NameError: name 'ulr_for' is not defined
-2018-06-14 14:58:34,039 ERROR: Exception on /explore [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
+  File "/home/duan/Flask_microblog/app/routes.py", line 72, in logout
+    HAHAlogout_user()
+NameError: name 'HAHAlogout_user' is not defined
+2018-06-16 00:01:18,658 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:51]
+2018-06-16 00:03:03,048 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:51]
+2018-06-16 16:07:59,185 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:51]
+2018-06-16 16:09:26,189 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:51]
+2018-06-16 16:19:27,855 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:51]
+2018-06-16 16:37:32,122 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:51]
+2018-06-16 16:38:28,361 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:51]
+2018-06-16 16:44:18,742 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:51]
+2018-06-16 16:45:27,474 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:51]
+2018-06-17 12:45:01,974 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:51]
+2018-06-18 23:19:42,060 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:51]
+2018-06-19 17:17:53,481 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:51]
+2018-06-19 22:54:55,395 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:53]
+2018-06-19 22:55:44,406 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:53]
+2018-06-19 23:03:47,400 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:53]
+2018-06-20 21:41:11,131 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:55]
+2018-06-21 11:08:06,084 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
+2018-06-21 11:08:17,726 ERROR: Exception on / [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -106,13 +81,20 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/duan/Flask_microblog/app/routes.py", line 46, in explore
-    prev_url = ulr_for('explore', page=posts.prev_num) if posts.has_prev else None
-NameError: name 'ulr_for' is not defined
-2018-06-14 14:59:22,611 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:49]
-2018-06-14 16:03:29,696 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:49]
-2018-06-14 16:04:44,150 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:49]
-2018-06-14 16:55:49,689 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:49]
-2018-06-14 17:05:15,089 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:49]
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_login/utils.py", line 260, in decorated_view
+    return current_app.login_manager.unauthorized()
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_login/login_manager.py", line 162, in unauthorized
+    if self.login_message:
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_babel/speaklater.py", line 26, in __len__
+    return len(text_type(self))
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_babel/speaklater.py", line 23, in __str__
+    return text_type(self._func(*self._args, **self._kwargs))
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_babel/__init__.py", line 552, in gettext
+    t = get_translations()
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_babel/__init__.py", line 227, in get_translations
+    [get_locale()],
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_babel/__init__.py", line 257, in get_locale
+    rv = babel.locale_selector_func()
+  File "/home/duan/Flask_microblog/app/__init__.py", line 62, in get_locale
+    return request.accept_languages.best.match(app.config['LANGUAGES']) # compare list of langs requested by client against the supported langs of app, return best choice.
+AttributeError: 'str' object has no attribute 'match'
