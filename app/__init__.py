@@ -60,5 +60,6 @@ if not app.debug:                   # only for debug mode: off
 @babel.localeselector
 def get_locale():
     return request.accept_languages.best_match(app.config['LANGUAGES']) # compare list of langs requested by client against the supported langs of app, return best choice.
+# Decorated func is invoked for each request to select a translation to use for that request.
 
 from app import routes, models, errors      # bottom imports

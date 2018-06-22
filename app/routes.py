@@ -15,7 +15,8 @@ def before_request():
     if current_user.is_authenticated:
         current_user.last_seen = datetime.utcnow()
         db.session.commit()
-    g.locale = str(get_locale())    # get_locale() returns a locale obj; use str() to get lang code.
+    g.locale = 'zh-cn' if str(get_locale()).startswith('zh') else str(get_locale())    # get_locale() returns a locale obj; use str() to get lang code.
+    #print(f'g.locale = {g.locale}')
 
 
 @app.route('/',methods=['GET', 'POST'])
