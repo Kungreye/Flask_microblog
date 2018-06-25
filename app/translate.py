@@ -43,7 +43,6 @@ def translate(text, source_language, dest_language):
 
     #print("r.content.decode('utf-8-sig')= ", r.content.decode('utf-8-sig'))
     #print("json.loads(r.content.decode('utf-8-sig'))= ",json.loads(r.content.decode('utf-8-sig')))
-
     return json.loads(r.content.decode('utf-8-sig'))[0]['translations'][0]['text']
 
 
