@@ -1,4 +1,4 @@
-2018-06-21 11:08:23,278 ERROR: Exception on /favicon.ico [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
+2018-06-21 11:14:29,745 ERROR: Exception on /favicon.ico [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
     rv = self.dispatch_request()
@@ -64,8 +64,7 @@ Traceback (most recent call last):
   File "/home/duan/Flask_microblog/app/__init__.py", line 62, in get_locale
     return request.accept_languages.best.match(app.config['LANGUAGES']) # compare list of langs requested by client against the supported langs of app, return best choice.
 AttributeError: 'str' object has no attribute 'match'
-2018-06-21 11:14:11,685 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-21 11:14:22,746 ERROR: Exception on / [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
+2018-06-21 11:14:46,806 ERROR: Exception on / [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()

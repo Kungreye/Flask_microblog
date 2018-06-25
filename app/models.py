@@ -88,6 +88,7 @@ class Post(db.Model):
     body = db.Column(db.String(140))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    # virtual field: author (defined in User)
+    language = db.Column(db.String(5))  # use guess_language to detect source lang during post submitting; len(lang code) <= 5.
+
     def __repr__(self):
         return '<Post {}>'.format(self.body)

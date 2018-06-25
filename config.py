@@ -18,7 +18,9 @@ class Config(object):
     # smtp.gmail.com: default 25, TLS 587
 
     LANGUAGES = ['en', 'zh_CN', 'zh']
-    # it seems flask-babel cannot accept hyphen like zh-cn, only str like 'en_US'; so modified to zh_CN
+    # Flask-Babel cannot accept hyphen like zh-cn, only str like 'en_US'; so modified to zh_CN
     # yet moment.locale() required:  Chinese(China),'zh-cn';  HK, zh-hk;  Taiwan, zh-tw.  Default: 'en' for English(US)
+    
+    MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')     # Azure subscription key is exported in env variable.
     
     POSTS_PER_PAGE = 3
