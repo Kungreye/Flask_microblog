@@ -1,17 +1,34 @@
+#!/usr/bin/env python
 from datetime import datetime, timedelta
 import unittest
-from app import app, db
+from app import create_app, db
 from app.models import User, Post
+from config import Config
+
+
+class TestConfig(Config):
+    TESTING = True
+    SQLALCHEMY_DATABASE_URI = 'sqlite://'
+# TESTING is for application to determin if it is running under unit tests or not.
+# Override default db in Config to use in-memory SQLite for unit tests.
 
 
 class UserModelCase(unittest.TestCase):
     def setUp(self):
-        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite://' # configure in-memory SQLite db for test.
+        self.app = create_app(TestConfig)
+        self.app_context = self.app.app_context()
+        self.app_context.push()     # Flask pushes an application text.
         db.create_all()
+    # db needs to know the db config from app instance. SO, which app instance to use?
+    # The current_app variable looks for an active application context in the current thread, 
+    # if application context is found, the app instance is got from it. 
+    # If there is no context, then no way to know what app is active,
+    # and current_app raises an exception.
 
     def tearDown(self):
         db.session.remove()
         db.drop_all()
+        self.app_context.pop()
 
     def test_password_hashing(self):
         u = User(username='susan')

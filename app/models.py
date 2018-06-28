@@ -1,10 +1,11 @@
 from datetime import datetime
 from hashlib import md5
 from time import time
+from flask import current_app
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 import jwt
-from app import app, db, login
+from app import db, login
 
 # association table for self-referential relationship of User following User.
 followers = db.Table('followers',
@@ -65,12 +66,12 @@ class User(UserMixin, db.Model):
     def get_reset_password_token(self, expires_in=600):
         return jwt.encode(
             {'reset_password': self.id, 'exp': time() + expires_in}, 
-            app.config['SECRET_KEY'], algorithm='HS256').decode('utf-8')    # jwt.encode() is byte sequence; use decode('utf-8') to tranform to string.
+            current_app.config['SECRET_KEY'], algorithm='HS256').decode('utf-8')    # jwt.encode() is byte sequence; use decode('utf-8') to tranform to string.
 
     @staticmethod           # staticmethod does not receive class or instance as first arg.
     def verify_reset_password_token(token):
         try:
-            id = jwt.decode(token, app.config['SECRET_KEY'], 
+            id = jwt.decode(token, current_app.config['SECRET_KEY'], 
                 algorithms=['HS256'])['reset_password']     # payload is dict.
         except:
             return None

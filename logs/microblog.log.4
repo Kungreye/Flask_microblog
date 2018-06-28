@@ -1,4 +1,4 @@
-2018-06-21 11:08:23,278 ERROR: Exception on /favicon.ico [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
+2018-06-27 20:21:24,002 ERROR: Exception on /favicon.ico [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
     rv = self.dispatch_request()
@@ -23,8 +23,8 @@ Traceback (most recent call last):
     return self.handle_http_exception(e)
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1644, in handle_http_exception
     return handler(e)
-  File "/home/duan/Flask_microblog/app/errors.py", line 7, in not_found_error
-    return render_template('404.html'), 404
+  File "/home/duan/Flask_microblog/app/errors/handlers.py", line 8, in not_found_error
+    return render_template('errors/404.html'), 404
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
     context, ctx.app)
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
@@ -37,7 +37,7 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/home/duan/Flask_microblog/app/templates/404.html", line 1, in top-level template code
+  File "/home/duan/Flask_microblog/app/templates/errors/404.html", line 1, in top-level template code
     {% extends "base.html" %}
   File "/home/duan/Flask_microblog/app/templates/base.html", line 1, in top-level template code
     {% extends 'bootstrap/base.html' %}
@@ -61,11 +61,10 @@ Traceback (most recent call last):
     [get_locale()],
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_babel/__init__.py", line 257, in get_locale
     rv = babel.locale_selector_func()
-  File "/home/duan/Flask_microblog/app/__init__.py", line 62, in get_locale
-    return request.accept_languages.best.match(app.config['LANGUAGES']) # compare list of langs requested by client against the supported langs of app, return best choice.
-AttributeError: 'str' object has no attribute 'match'
-2018-06-21 11:14:11,685 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-21 11:14:22,746 ERROR: Exception on / [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
+  File "/home/duan/Flask_microblog/app/__init__.py", line 84, in get_locale
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
+NameError: name 'app' is not defined
+2018-06-27 21:32:06,143 ERROR: Exception on / [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -75,24 +74,14 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
     raise value
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_login/utils.py", line 260, in decorated_view
-    return current_app.login_manager.unauthorized()
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_login/login_manager.py", line 162, in unauthorized
-    if self.login_message:
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_babel/speaklater.py", line 26, in __len__
-    return len(text_type(self))
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_babel/speaklater.py", line 23, in __str__
-    return text_type(self._func(*self._args, **self._kwargs))
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_babel/__init__.py", line 552, in gettext
-    t = get_translations()
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_babel/__init__.py", line 227, in get_translations
-    [get_locale()],
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1811, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2087, in preprocess_request
+    rv = func()
+  File "/home/duan/Flask_microblog/app/main/routes.py", line 19, in before_request
+    g.locale = 'zh-cn' if str(get_locale()).startswith('zh') else str(get_locale())    # get_locale() returns a locale obj; use str() to get lang code.
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_babel/__init__.py", line 257, in get_locale
     rv = babel.locale_selector_func()
-  File "/home/duan/Flask_microblog/app/__init__.py", line 62, in get_locale
-    return request.accept_languages.best.match(app.config['LANGUAGES']) # compare list of langs requested by client against the supported langs of app, return best choice.
-AttributeError: 'str' object has no attribute 'match'
+  File "/home/duan/Flask_microblog/app/__init__.py", line 84, in get_locale
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
+NameError: name 'app' is not defined

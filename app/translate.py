@@ -1,7 +1,7 @@
 import json
 import requests
+from flask import current_app
 from flask_babel import _
-from app import app
 
 
 # In Microsoft Translator Text API V3, all data sent and received using the API is in JSON format. 
@@ -9,8 +9,8 @@ from app import app
 
 def translate(text, source_language, dest_language):
     
-    if 'MS_TRANSLATOR_KEY' not in app.config or \
-            not app.config['MS_TRANSLATOR_KEY']:
+    if 'MS_TRANSLATOR_KEY' not in current_app.config or \
+            not current_app.config['MS_TRANSLATOR_KEY']:
         return _('Error: the translation service is not configured.')
 
     
@@ -20,7 +20,7 @@ def translate(text, source_language, dest_language):
               'to': '{}'.format(dest_language)}
     requestBody = [{'Text': text}]  # dict format
     headers = {
-        'Ocp-Apim-Subscription-Key': app.config['MS_TRANSLATOR_KEY'],
+        'Ocp-Apim-Subscription-Key': current_app.config['MS_TRANSLATOR_KEY'],
         'Content-Type': 'application/json'
         }
 
