@@ -1,4 +1,4 @@
-2018-06-27 21:36:44,090 ERROR: Exception on /auth/login [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
+2018-07-01 22:28:31,766 ERROR: Exception on /search [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,42 +12,89 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/duan/Flask_microblog/app/auth/routes.py", line 27, in login
-    return render_template('auth/login.html', title=_('Sign In'), form=form)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
-    context, ctx.app)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
-    rv = template.render(context)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/home/duan/Flask_microblog/app/templates/auth/login.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "/home/duan/Flask_microblog/app/templates/base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
-    {%- block html %}
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
-    {% block body -%}
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
-    {% block navbar %}
-  File "/home/duan/Flask_microblog/app/templates/base.html", line 19, in block "navbar"
-    <a class="navbar-brand" href="{{ url_for('index') }}">Microblog</a>
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/helpers.py", line 356, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2061, in handle_url_build_error
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/duan/Flask_microblog/app/main/routes.py", line 154, in search
+    posts, total = Post.search(g.search_form.q.data, page, per_page)
+  File "/home/duan/Flask_microblog/app/models.py", line 15, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "/home/duan/Flask_microblog/app/search.py", line 29, in query_index
+    'size': per_page
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 655, in search
+    doc_type, '_search'), params=params, body=body)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/transport.py", line 318, in perform_request
+    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 185, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/connection/base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+elasticsearch.exceptions.RequestError: TransportError(400, 'search_phase_execution_exception', 'numHits must be > 0; please use TotalHitCountCollector if you just need the total hit count')
+2018-07-01 22:46:58,694 ERROR: Exception on /search [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
     reraise(exc_type, exc_value, tb)
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
     raise value
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/helpers.py", line 345, in url_for
-    force_external=external)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/werkzeug/routing.py", line 1776, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/duan/Flask_microblog/app/main/routes.py", line 154, in search
+    posts, total = Post.search(g.search_form.q.data, page, per_page)
+  File "/home/duan/Flask_microblog/app/models.py", line 15, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "/home/duan/Flask_microblog/app/search.py", line 29, in query_index
+    'size': per_page
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 655, in search
+    doc_type, '_search'), params=params, body=body)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/transport.py", line 318, in perform_request
+    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 185, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/connection/base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+elasticsearch.exceptions.RequestError: TransportError(400, 'search_phase_execution_exception', 'numHits must be > 0; please use TotalHitCountCollector if you just need the total hit count')
+2018-07-01 22:47:59,589 ERROR: Exception on /search [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/duan/Flask_microblog/app/main/routes.py", line 154, in search
+    posts, total = Post.search(g.search_form.q.data, page, per_page)
+  File "/home/duan/Flask_microblog/app/models.py", line 15, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "/home/duan/Flask_microblog/app/search.py", line 29, in query_index
+    'size': per_page
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 655, in search
+    doc_type, '_search'), params=params, body=body)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/transport.py", line 318, in perform_request
+    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 185, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/connection/base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+elasticsearch.exceptions.RequestError: TransportError(400, 'search_phase_execution_exception', 'numHits must be > 0; please use TotalHitCountCollector if you just need the total hit count')
+2018-07-01 22:48:43,004 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:80]

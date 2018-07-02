@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "fbfc7a845e5705c9bba2d61d2f82f32e618c72efbcde1f9596d551db8918ddc5"
+            "sha256": "89e27956197fcf2c05f0961fdde1e3d8a21923eeaba34e43729732b6eb866558"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -18,10 +18,10 @@
     "default": {
         "alembic": {
             "hashes": [
-                "sha256:85bd3ea7633024e4930900bc64fb58f9742dedbc6ebb6ecf25be2ea9a3c1b32e"
+                "sha256:1cd32df9a3b8c1749082ef60ffbe05ff16617b6afadfdabc680dcb9344af33d7"
             ],
             "index": "pypi.doubanio.com",
-            "version": "==0.9.9"
+            "version": "==0.9.10"
         },
         "async-timeout": {
             "hashes": [
@@ -41,6 +41,7 @@
         },
         "babel": {
             "hashes": [
+                "sha256:6640c51ecd2c4eb6c19c779df63efed77969da44c085c27f991ba8a40c60c914",
                 "sha256:6778d85147d5d85345c14a26aada5e478ab04e39b078b0745ee6870c2b5cf669",
                 "sha256:8cba50f48c529ca3fa18cf81fa9403be176d374ac4d60738b839122dfaaa3d23"
             ],
@@ -100,6 +101,14 @@
             ],
             "index": "pypi.doubanio.com",
             "version": "==2.3.1"
+        },
+        "elasticsearch": {
+            "hashes": [
+                "sha256:24c93ba3bb078328c70137c31d9bfcfa152f61c3df64823b99b25307123611df",
+                "sha256:80ff7a1a56920535a9987da333c7e385b2ded27595b6de33860707dab758efbe"
+            ],
+            "index": "pypi.doubanio.com",
+            "version": "==6.3.0"
         },
         "flask": {
             "hashes": [
@@ -217,11 +226,11 @@
         },
         "jedi": {
             "hashes": [
-                "sha256:1972f694c6bc66a2fac8718299e2ab73011d653a6d8059790c3476d2353b99ad",
-                "sha256:5861f6dc0c16e024cbb0044999f9cf8013b292c05f287df06d3d991a87a4eb89"
+                "sha256:b409ed0f6913a701ed474a614a3bb46e6953639033e31f769ca7581da5bd1ec1",
+                "sha256:c254b135fb39ad76e78d4d8f92765ebc9bf92cbc76f49e97ade1d5f5121e1f6f"
             ],
             "index": "pypi.doubanio.com",
-            "version": "==0.12.0"
+            "version": "==0.12.1"
         },
         "jinja2": {
             "hashes": [
@@ -266,11 +275,11 @@
         },
         "parso": {
             "hashes": [
-                "sha256:cdef26e8adc10d589f3ec4eb444bd0a29f3f1eb6d72a4292ab8afcb9d68976a6",
-                "sha256:f0604a40b96e062b0fd99cf134cc2d5cdf66939d0902f8267d938b0d5b26707f"
+                "sha256:8105449d86d858e53ce3e0044ede9dd3a395b1c9716c696af8aa3787158ab806",
+                "sha256:d250235e52e8f9fc5a80cc2a5f804c9fefd886b2e67a2b1099cf085f403f8e33"
             ],
             "index": "pypi.doubanio.com",
-            "version": "==0.2.1"
+            "version": "==0.3.0"
         },
         "pexpect": {
             "hashes": [
@@ -355,11 +364,11 @@
         },
         "pytz": {
             "hashes": [
-                "sha256:65ae0c8101309c45772196b21b74c46b2e5d11b6275c45d251b150d5da334555",
-                "sha256:c06425302f2cf668f1bba7a0a03f3c1d34d4ebeef2c72003da308b3947c7f749"
+                "sha256:a061aa0a9e06881eb8b3b2b43f05b9439d6583c206d0a6c340ff72a7b6669053",
+                "sha256:ffb9ef1de172603304d9d2819af6f5ece76f2e85ec10692a524dd876e72bf277"
             ],
             "index": "pypi.doubanio.com",
-            "version": "==2018.4"
+            "version": "==2018.5"
         },
         "requests": {
             "hashes": [
@@ -386,10 +395,10 @@
         },
         "sqlalchemy": {
             "hashes": [
-                "sha256:2d5f08f714a886a1382c18be501e614bce50d362384dc089474019ce0768151c"
+                "sha256:e21e5561a85dcdf16b8520ae4daec7401c5c24558e0ce004f9b60be75c4b6957"
             ],
             "index": "pypi.doubanio.com",
-            "version": "==1.2.8"
+            "version": "==1.2.9"
         },
         "traitlets": {
             "hashes": [

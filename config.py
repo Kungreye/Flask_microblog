@@ -26,4 +26,6 @@ class Config(object):
     
     MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')     # Azure subscription key is exported in env variable.
     
-    POSTS_PER_PAGE = 3
+    ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
+    
+    POSTS_PER_PAGE = 6

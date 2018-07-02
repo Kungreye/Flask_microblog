@@ -1,4 +1,4 @@
-2018-06-27 21:33:16,671 ERROR: Exception on /favicon.ico [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
+2018-06-27 21:36:57,987 ERROR: Exception on /favicon.ico [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
     rv = self.dispatch_request()
@@ -45,23 +45,61 @@ Traceback (most recent call last):
     {% block doc -%}
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
     {%- block html %}
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 6, in block "html"
-    {%- block head %}
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 7, in block "head"
-    <title>{% block title %}{{title|default}}{% endblock title %}</title>
-  File "/home/duan/Flask_microblog/app/templates/base.html", line 5, in block "title"
-    {% if title %}{{ title }} - Microblog{% else %}{{ _('Welcome to Microblog') }}{% endif %}
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/ext.py", line 134, in _gettext_alias
-    return __context.call(__context.resolve('gettext'), *args, **kwargs)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/ext.py", line 140, in gettext
-    rv = __context.call(func, __string)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_babel/__init__.py", line 116, in <lambda>
-    lambda x: get_translations().ugettext(x),
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_babel/__init__.py", line 227, in get_translations
-    [get_locale()],
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_babel/__init__.py", line 257, in get_locale
-    rv = babel.locale_selector_func()
-  File "/home/duan/Flask_microblog/app/__init__.py", line 84, in get_locale
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
-NameError: name 'app' is not defined
-2018-06-27 21:36:39,874 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:77]
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
+    {% block navbar %}
+  File "/home/duan/Flask_microblog/app/templates/base.html", line 19, in block "navbar"
+    <a class="navbar-brand" href="{{ url_for('index') }}">Microblog</a>
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
+2018-06-27 21:57:56,207 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:77]
+2018-06-27 22:50:24,658 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:77]
+2018-06-29 23:10:50,371 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:77]
+2018-07-01 17:26:32,136 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:80]
+2018-07-01 17:27:54,199 ERROR: Exception on / [POST] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/duan/Flask_microblog/app/main/routes.py", line 35, in index
+    db.session.commit()
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/sqlalchemy/orm/scoping.py", line 153, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 943, in commit
+    self.transaction.commit()
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 474, in commit
+    self.session.dispatch.after_commit(self.session)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/sqlalchemy/event/attr.py", line 246, in __call__
+    fn(*args, **kw)
+  File "/home/duan/Flask_microblog/app/models.py", line 39, in after_commit
+    if isinstance(obj. SearchableMixin):     # only for obj derived from SearchableMixin
+AttributeError: 'Post' object has no attribute 'SearchableMixin'
+2018-07-01 17:31:01,563 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:80]
+2018-07-01 17:34:28,355 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:80]
+2018-07-01 17:34:39,077 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:80]
+2018-07-01 17:37:30,865 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:80]
+2018-07-01 17:40:21,549 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:80]
+2018-07-01 17:41:20,326 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:80]
+2018-07-01 17:43:04,699 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:80]
+2018-07-01 22:24:49,838 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:80]

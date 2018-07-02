@@ -58,6 +58,7 @@ yarl = "*"
 "urllib3" = "*"
 python-dotenv = "*"
 pyenchant = "*"
+elasticsearch = "*"
 
 [dev-packages]
 
