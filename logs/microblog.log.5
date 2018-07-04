@@ -1,4 +1,4 @@
-2018-06-27 21:32:08,706 ERROR: Exception on /favicon.ico [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
+2018-06-27 21:33:16,671 ERROR: Exception on /favicon.ico [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
     rv = self.dispatch_request()
@@ -64,25 +64,4 @@ Traceback (most recent call last):
   File "/home/duan/Flask_microblog/app/__init__.py", line 84, in get_locale
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 NameError: name 'app' is not defined
-2018-06-27 21:32:48,135 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:77]
-2018-06-27 21:33:11,677 ERROR: Exception on / [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1811, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2087, in preprocess_request
-    rv = func()
-  File "/home/duan/Flask_microblog/app/main/routes.py", line 19, in before_request
-    g.locale = 'zh-cn' if str(get_locale()).startswith('zh') else str(get_locale())    # get_locale() returns a locale obj; use str() to get lang code.
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_babel/__init__.py", line 257, in get_locale
-    rv = babel.locale_selector_func()
-  File "/home/duan/Flask_microblog/app/__init__.py", line 84, in get_locale
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
-NameError: name 'app' is not defined
+2018-06-27 21:36:39,874 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:77]

@@ -1,57 +1,70 @@
-2018-06-25 11:24:20,108 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 11:24:31,488 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 11:24:41,731 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 11:25:03,763 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 11:28:20,918 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 13:20:19,444 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 14:02:20,267 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 14:06:58,911 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 14:08:04,602 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 14:19:13,303 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 14:22:08,767 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 14:22:18,593 ERROR: Exception on /translate [POST] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
+2018-06-27 20:21:24,002 ERROR: Exception on /favicon.ico [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1791, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1774, in raise_routing_exception
+    raise request.routing_exception
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/ctx.py", line 336, in match_request
+    self.url_adapter.match(return_rule=True)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/werkzeug/routing.py", line 1581, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1816, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1831, in finalize_request
-    response = self.make_response(rv)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1957, in make_response
-    'The view function did not return a valid response. The'
-TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
-2018-06-25 14:24:34,198 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 14:30:40,494 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 15:17:56,951 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 15:30:04,277 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 15:36:31,991 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 15:40:34,656 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 15:41:00,979 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 15:49:27,201 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 15:52:21,711 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 15:54:06,468 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 15:55:25,047 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 15:58:26,730 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 15:59:00,239 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 16:07:17,748 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 16:11:01,345 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 16:11:37,726 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 16:12:15,624 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 16:14:02,961 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 16:29:47,698 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 16:39:17,078 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 17:27:37,181 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 23:21:35,017 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 23:21:47,488 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 23:55:45,302 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 23:55:50,056 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-25 23:58:43,051 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:56]
-2018-06-27 17:54:33,980 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:77]
-2018-06-27 17:56:05,290 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:77]
-2018-06-27 17:56:05,290 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:77]
-2018-06-27 18:14:55,089 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:77]
-2018-06-27 20:21:12,614 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:77]
-2018-06-27 20:21:20,824 ERROR: Exception on / [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1713, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1644, in handle_http_exception
+    return handler(e)
+  File "/home/duan/Flask_microblog/app/errors/handlers.py", line 8, in not_found_error
+    return render_template('errors/404.html'), 404
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/duan/Flask_microblog/app/templates/errors/404.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/duan/Flask_microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 6, in block "html"
+    {%- block head %}
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 7, in block "head"
+    <title>{% block title %}{{title|default}}{% endblock title %}</title>
+  File "/home/duan/Flask_microblog/app/templates/base.html", line 5, in block "title"
+    {% if title %}{{ title }} - Microblog{% else %}{{ _('Welcome to Microblog') }}{% endif %}
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/ext.py", line 134, in _gettext_alias
+    return __context.call(__context.resolve('gettext'), *args, **kwargs)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/jinja2/ext.py", line 140, in gettext
+    rv = __context.call(func, __string)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_babel/__init__.py", line 116, in <lambda>
+    lambda x: get_translations().ugettext(x),
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_babel/__init__.py", line 227, in get_translations
+    [get_locale()],
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_babel/__init__.py", line 257, in get_locale
+    rv = babel.locale_selector_func()
+  File "/home/duan/Flask_microblog/app/__init__.py", line 84, in get_locale
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
+NameError: name 'app' is not defined
+2018-06-27 21:32:06,143 ERROR: Exception on / [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()

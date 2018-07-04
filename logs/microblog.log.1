@@ -1,4 +1,4 @@
-2018-07-01 22:28:31,766 ERROR: Exception on /search [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
+2018-07-01 22:49:09,392 ERROR: Exception on /search [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -31,7 +31,51 @@ Traceback (most recent call last):
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/connection/base.py", line 125, in _raise_error
     raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
 elasticsearch.exceptions.RequestError: TransportError(400, 'search_phase_execution_exception', 'numHits must be > 0; please use TotalHitCountCollector if you just need the total hit count')
-2018-07-01 22:46:58,694 ERROR: Exception on /search [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
+2018-07-01 22:55:03,017 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:80]
+2018-07-02 13:01:43,204 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:80]
+2018-07-02 13:02:23,554 ERROR: Exception on /search [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/urllib3/connection.py", line 171, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/urllib3/util/connection.py", line 79, in create_connection
+    raise err
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/urllib3/util/connection.py", line 69, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 171, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=request_headers, **kw)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/urllib3/util/retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/local/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/local/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/urllib3/connection.py", line 196, in connect
+    conn = self._new_conn()
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/urllib3/connection.py", line 180, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f5991a24978>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -59,42 +103,11 @@ Traceback (most recent call last):
     doc_type, '_search'), params=params, body=body)
   File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/transport.py", line 318, in perform_request
     status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 185, in perform_request
-    self._raise_error(response.status, raw_data)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/connection/base.py", line 125, in _raise_error
-    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
-elasticsearch.exceptions.RequestError: TransportError(400, 'search_phase_execution_exception', 'numHits must be > 0; please use TotalHitCountCollector if you just need the total hit count')
-2018-07-01 22:47:59,589 ERROR: Exception on /search [GET] [in /home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/duan/Flask_microblog/app/main/routes.py", line 154, in search
-    posts, total = Post.search(g.search_form.q.data, page, per_page)
-  File "/home/duan/Flask_microblog/app/models.py", line 15, in search
-    ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "/home/duan/Flask_microblog/app/search.py", line 29, in query_index
-    'size': per_page
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
-    return func(*args, params=params, **kwargs)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 655, in search
-    doc_type, '_search'), params=params, body=body)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/transport.py", line 318, in perform_request
-    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 185, in perform_request
-    self._raise_error(response.status, raw_data)
-  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/connection/base.py", line 125, in _raise_error
-    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
-elasticsearch.exceptions.RequestError: TransportError(400, 'search_phase_execution_exception', 'numHits must be > 0; please use TotalHitCountCollector if you just need the total hit count')
-2018-07-01 22:48:43,004 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:80]
+  File "/home/duan/.local/share/virtualenvs/Flask_microblog-6CoWjSse/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 180, in perform_request
+    raise ConnectionError('N/A', str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x7f5991a24978>: Failed to establish a new connection: [Errno 111] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x7f5991a24978>: Failed to establish a new connection: [Errno 111] Connection refused)
+2018-07-02 13:03:50,064 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:80]
+2018-07-02 17:55:52,509 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:80]
+2018-07-04 18:04:26,100 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:80]
+2018-07-04 18:04:35,812 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:80]
+2018-07-04 18:05:15,097 INFO: Microblog startup [in /home/duan/Flask_microblog/app/__init__.py:80]
