@@ -1,7 +1,7 @@
 # Flask_microblog
 Learn flask by building an web application, which is basically a microblog.
 
-# Features:
+## Features:
 <ul>
     <li>Issue blog posts</li>
     <li>Display private profile with avatar</li>
@@ -11,26 +11,28 @@ Learn flask by building an web application, which is basically a microblog.
 </ul>
 
 
-# Requirements: 
+## Requirements: 
 <ul>
     <li>Python==3.6.4</li>
     <li>Flask==1.0.2</li>
     <li>MySQL==5.7.22</li>
     <li>Elasticsearch==6.3.0<li>
 </ul>
+<hr>
 
+## Demo images
 
-# Explore
+### Explore
 ![explore](https://github.com/Kungreye/Flask_microblog/blob/master/demo_img/explore.PNG)
-
-# Profile
+<hr>
+### Profile
 ![Profile](https://github.com/Kungreye/Flask_microblog/blob/master/demo_img/profile.PNG)
-
-# Follow
+<hr>
+### Follow
 ![follow](https://github.com/Kungreye/Flask_microblog/blob/master/demo_img/follow.PNG)
-
-# Translate
+<hr>
+### Translate
 ![Translate](https://github.com/Kungreye/Flask_microblog/blob/master/demo_img/translate.PNG)
-
-# Search
+<hr>
+### Search
 ![Search](https://github.com/Kungreye/Flask_microblog/blob/master/demo_img/search.PNG)
