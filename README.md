@@ -1,7 +1,7 @@
 # Flask_microblog
 Learn flask by building an web application, which is basically a microblog.
 
-Features:
+# Features:
 <ul>
     <li>Issue blog posts</li>
     <li>Display private profile with avatar</li>
@@ -11,16 +11,26 @@ Features:
 </ul>
 
 
-Requirements: 
+# Requirements: 
 <ul>
-    <li>python==3.6.4</li>
-    <li>flask==1.0.2</li>
+    <li>Python==3.6.4</li>
+    <li>Flask==1.0.2</li>
     <li>MySQL==5.7.22</li>
     <li>Elasticsearch==6.3.0<li>
-
 </ul>
 
 
-![index](https://github.com/Kungreye/aiohttpdemo_polls/blob/master/demo_img/index.PNG)
-![poll/1](https://github.com/Kungreye/aiohttpdemo_polls/blob/master/demo_img/poll_1.PNG)
-![poll/1/results](https://github.com/Kungreye/aiohttpdemo_polls/blob/master/demo_img/poll_1_results.PNG)
+# Explore
+![explore](https://github.com/Kungreye/Flask_microblog/blob/master/demo_img/explore.PNG)
+
+# Profile
+![Profile](https://github.com/Kungreye/Flask_microblog/blob/master/demo_img/profile.PNG)
+
+# Follow
+![follow](https://github.com/Kungreye/Flask_microblog/blob/master/demo_img/follow.PNG)
+
+# Translate
+![Translate](https://github.com/Kungreye/Flask_microblog/blob/master/demo_img/translate.PNG)
+
+# Search
+![Search](https://github.com/Kungreye/Flask_microblog/blob/master/demo_img/search.PNG)
