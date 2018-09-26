@@ -56,12 +56,12 @@ def create_app(config_class=Config):
                 auth = (app.config['MAIL_USERNAME'],
                         app.config['MAIL_PASSWORD'])
             secure = None
-            if app.config['MAIL_USE_TLS']:
+            if app.config['MAIL_USE_TLS'] or app.config['MAIL_USE_SSL']:
                 secure = ()     # only be used when credentials are supplied.
             mail_handler = SMTPHandler(
                 mailhost=(app.config['MAIL_SERVER'], app.config['MAIL_PORT']),
-                fromaddr= 'no-reply@' + app.config['MAIL_SERVER'],
-                toaddrs= app.config['ADMINS'],
+                fromaddr= app.config['ADMIN'],
+                toaddrs= [app.config['ADMIN']],
                 subject= 'Microblog Failure',
                 credentials= auth,
                 secure= secure,)
