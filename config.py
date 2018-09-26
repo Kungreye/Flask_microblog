@@ -17,7 +17,7 @@ class Config(object):
     MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS') is not None
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME') # optional, by default not used.
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD') # optional, by default not used.
-    ADMINS = ['kungreye@gmail.com']    # list of email addrs willing to receive error reports.
+    ADMIN = os.environ.get('ADMIN')   # list of email addrs willing to receive error reports.
     # smtp.gmail.com: default 25, TLS 587
 
     LANGUAGES = ['en', 'zh_CN', 'zh']
