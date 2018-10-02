@@ -22,7 +22,6 @@ Flask-WTF==0.14.2
 guess-language-spirit==0.5.3
 idna==2.7
 idna-ssl==1.0.1
-ipython==6.4.0
 ipython-genutils==0.2.0
 itsdangerous==0.24
 jedi==0.12.1
