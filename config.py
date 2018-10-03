@@ -21,12 +21,10 @@ class Config(object):
     ADMIN = os.environ.get('ADMIN')   # list of email addrs willing to receive error reports.
     # smtp.gmail.com: default 25, TLS 587
 
-    LANGUAGES = ['en', 'zh_CN', 'zh']
-    # Flask-Babel cannot accept hyphen like zh-cn, only str like 'en_US'; so modified to zh_CN
-    # yet moment.locale() required:  Chinese(China),'zh-cn';  HK, zh-hk;  Taiwan, zh-tw.  Default: 'en' for English(US)
+    LANGUAGES = ['en', 'zh']
+    # Flask-Babel can accept 'zh', but cannot accept hyphen like 'zh-cn', only str like 'en_US'.
+    # But, moment.locale(): Chinese(China),'zh-cn';  HK, zh-hk;  Taiwan, zh-tw.  Default: 'en' for English(US)
     
-    MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')     # Azure subscription key is exported in env variable.
-    
+    MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
     ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
-    
     POSTS_PER_PAGE = 6

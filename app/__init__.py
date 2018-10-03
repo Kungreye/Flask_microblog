@@ -17,7 +17,7 @@ db = SQLAlchemy()                # engine created.
 migrate = Migrate()
 login = LoginManager()
 login.login_view = 'auth.login'  # force user to login by redirect to view func 'auth.login'.
-login.login_message = _l('Please log in to access this page.')  # override default message, ensure flashed message during redirect can also be translated.
+login.login_message = _l('Please log in to access this page.')
 mail = Mail()
 bootstrap = Bootstrap()
 moment = Moment()
@@ -47,28 +47,29 @@ def create_app(config_class=Config):
     from app.main import bp as main_bp
     app.register_blueprint(main_bp)
 
-
-
     if not app.debug and not app.testing:                   # only for debug mode: off
         if app.config['MAIL_SERVER']:
+
             auth = None
             if app.config['MAIL_USERNAME'] or app.config['MAIL_PASSWORD']:
                 auth = (app.config['MAIL_USERNAME'],
                         app.config['MAIL_PASSWORD'])
+
             secure = None
             if app.config['MAIL_USE_TLS'] or app.config['MAIL_USE_SSL']:
                 secure = ()     # only be used when credentials are supplied.
+
             mail_handler = SMTPHandler(
                 mailhost=(app.config['MAIL_SERVER'], app.config['MAIL_PORT']),
-                fromaddr= app.config['ADMIN'],
-                toaddrs= [app.config['ADMIN']],
-                subject= 'Microblog Failure',
-                credentials= auth,
+                fromaddr=app.config['ADMIN'],
+                toaddrs=[app.config['ADMIN']],
+                subject='Microblog Failure',
+                credentials=auth,
                 secure= secure,)
             mail_handler.setLevel(logging.ERROR)    # DEBUG, INFO, WARNING, ERROR, CRITICAL
             app.logger.addHandler(mail_handler)     # app.logger object is from Flask.
     
-        if not os.path.exists('logs'):              # if Microblog/logs/ exists or not
+        if not os.path.exists('logs'):
             os.mkdir('logs')
         file_handler = RotatingFileHandler('logs/microblog.log', maxBytes=10240, backupCount=10)
         file_handler.setFormatter(logging.Formatter(
@@ -84,21 +85,11 @@ def create_app(config_class=Config):
 
 @babel.localeselector
 def get_locale():
-    return request.accept_languages.best_match(current_app.config['LANGUAGES']) 
-"""
-compare list of langs requested by client against the supported langs of app, return best choice.
-Decorated func is invoked for each request to select a translation to use for that request.
-"""
+    """
+    compare list of langs requested by client against the supported langs of app, return best choice.
+    Decorated func is invoked for each request to select a translation to use for that request.
+    """
+    return request.accept_languages.best_match(current_app.config['LANGUAGES'])
 
 
 from app import models
-
-
-
-
-"""
-RotatingFileHandler(filename, mode='a', maxBytes=0, backupCount=0, encoding=None, delay=0) 
-
-supports rotation of disk log files, located in logging.handlers module.
-
-"""
